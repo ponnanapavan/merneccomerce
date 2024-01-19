@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 const NewCollections = () => {
   const [new_collection,setNew_Collection]=useState([]);
   useEffect(()=>{
-   fetch('http://localhost:4000/newcollections')
+   fetch('https://eccomerceapi-75u7.onrender.com/newcollections')
    .then((response)=>response.json())
    .then((data)=>setNew_Collection(data))
   },[])

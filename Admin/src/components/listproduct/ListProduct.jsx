@@ -4,7 +4,7 @@ import cross_icon from '../../assets/cross_icon.png'
 const ListProduct = () => {
   const [allproducts,setAllProducts]=useState([]);
   const fetchInfo=async()=>{
-    await fetch('http://localhost:4000/allproducts')
+    await fetch('https://eccomerceapi-75u7.onrender.com/allproducts')
     .then((response)=>response.json())
     .then((data)=>{setAllProducts(data)})
   }
@@ -12,7 +12,7 @@ const ListProduct = () => {
   fetchInfo();
   },[])
   const removeproduct=async(id)=>{//remove particular item in the database
-    await fetch('http://localhost:4000/removeproduct',
+    await fetch('https://eccomerceapi-75u7.onrender.com/removeproduct',
     {
       method:'POST',
       headers:

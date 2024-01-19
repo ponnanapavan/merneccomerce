@@ -10,7 +10,6 @@ const Navbar = () => {
     const {gettotalcarts}=useContext(ShopContext)
     const  menuRef=useRef();
     const dropdown_toggle=(ev)=>{
-     console.log(ev)
     menuRef.current.classList.toggle('nav-menu-visible')
     ev.target.classList.toggle('open');
     }

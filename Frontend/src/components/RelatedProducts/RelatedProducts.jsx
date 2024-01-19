@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 const RelatedProducts = () => {
   const [data_product,setData_Product]=useState([]);
   useEffect(()=>{
-  fetch('http://localhost:4000/popularinwomen')
+  fetch('https://eccomerceapi-75u7.onrender.com/popularinwomen')
   .then((response)=>response.json())
   .then((data)=>{setData_Product(data)})
   },[])

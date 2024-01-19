@@ -14,10 +14,10 @@ const ShopContextProvider=(props)=>
   const [all_products,setAll_Product]=useState([]);
   const [cartItems, setCartItems]=useState(getDefaultCart());//intially get an empty cart 
   useEffect(()=>{
-      fetch('http://localhost:4000/allproducts')
+      fetch('https://eccomerceapi-75u7.onrender.com/allproducts')
       .then((response)=>response.json()).then((data)=>setAll_Product(data))
       if(localStorage.getItem('auth-token')){
-        fetch('http://localhost:4000/getcart',{
+        fetch('https://eccomerceapi-75u7.onrender.com/getcart',{
           method:'POST',
           headers:{
             Accept:'application/form-data',
@@ -37,7 +37,7 @@ const ShopContextProvider=(props)=>
         setCartItems((prev)=>({...prev,[ItemId]:(prev[ItemId]+1)}));
         if(localStorage.getItem('auth-token'))
         {
-          fetch('http://localhost:4000/addtocart',{
+          fetch('https://eccomerceapi-75u7.onrender.com/addtocart',{
             method:'POST',
             headers:
             {
@@ -57,7 +57,7 @@ const ShopContextProvider=(props)=>
         setCartItems((prev)=>({...prev,[ItemId]:prev[ItemId]-1}));
         if(localStorage.getItem('auth-token'))
         {
-          fetch('http://localhost:4000/removefromcart',{
+          fetch('https://eccomerceapi-75u7.onrender.com/removefromcart',{
             method:'POST',
             headers:
             {

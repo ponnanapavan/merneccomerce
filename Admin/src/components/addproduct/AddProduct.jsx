@@ -32,7 +32,7 @@ const AddProduct = () => {
     }).then((resp)=>resp.json()).then((data)=>{responseData=data})
     if(responseData.success){
         product.image=responseData.image_url;
-        await fetch('http://localhost:4000/addproduct',//here i am storing the product data in mongodb 
+        await fetch('https://eccomerceapi-75u7.onrender.com/addproduct',//here i am storing the product data in mongodb 
         {
             method:'POST',
             headers:{
